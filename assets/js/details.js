@@ -19,7 +19,9 @@ fetch(urlFinal)
         imagen.innerHTML += `<img src="../assets/img/departamentos/${data.name}.png" alt=""/>`;
 
         let description = document.getElementById("description");
-        description.innerHTML += `<p>${data.description}</p>`;
+        description.innerHTML += `  <p>${data.description}</p>
+                                    <p>Municipios: ${data.municipalities}</p>
+                                    <p>Población: ${Intl.NumberFormat("de-DE").format(data.population)}</p>`;
     });
 
 fetch(urlCities)
