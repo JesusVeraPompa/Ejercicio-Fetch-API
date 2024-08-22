@@ -28,7 +28,12 @@
 main {
     flex-grow: 1;
     background-color: rgb(240, 240, 240);
+    padding-bottom: 50px;
 }
+main>.container-fluid>.row{
+    padding-top: 50px !important;
+}
+ 
 .cuadro > img {
     width: auto;
     height: 500px;
