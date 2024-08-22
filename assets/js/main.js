@@ -15,7 +15,7 @@ fetch(urlFinal).then(response => response.json()).then(data => {
                                     <p class="card-text">${data[i].description}</p>
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col">
-                                            <a id="boton" href="#" class="btn btn-primary" onClick="valorDelID('')">Details</a>
+                                            <a id="boton${data[i].id}" href="#" class="btn btn-primary" onClick="valorDelID('${data[i].id}')">Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -24,3 +24,10 @@ fetch(urlFinal).then(response => response.json()).then(data => {
         contenedor.appendChild(tarjeta);
     }
 }) 
+
+function valorDelID(valorId) {
+    //console.log(valorId);
+    let ancor = document.getElementById("boton" + valorId);
+    //console.log(ancor);
+    ancor.href = "./pages/details.html?id=" + valorId;
+}
