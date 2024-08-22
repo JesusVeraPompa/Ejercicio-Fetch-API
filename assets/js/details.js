@@ -16,7 +16,7 @@ fetch(urlFinal).then(response => response.json()).then(data => {
     name.innerHTML += `<h1>${data.name} - Departamento de <span class="yellow">Col</span><span class="blue">om</span><span class="red">bia</span></h1>`
 
     let imagen = document.getElementById("imagen");
-    imagen.innerHTML += `<img src="../img/departamentos/${data.name}.png" class="card-img-top p-2" alt=""/>`
+    imagen.innerHTML += `<img src="../../assets/img/departamentos/${data.name}.png" class="card-img-top p-2" alt=""/>`
 
     let description = document.getElementById("description");
     description.innerHTML += `<p>${data.description}</p>`
