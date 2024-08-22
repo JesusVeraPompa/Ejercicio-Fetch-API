@@ -29,6 +29,10 @@ fetch(urlCities)
     .then((data) => {
         console.log(data);
 
+        // extraer las name del array arraynaturalareas
+        let arraynamesNaturalareas = data.map((naturalArea) => naturalArea.name);
+        console.log(arraynamesNaturalareas);
+
         fetch(urlNaturalareas)
             .then((response) => response.json())
             .then((dataAN) => {
@@ -36,59 +40,57 @@ fetch(urlCities)
                 //console.log(dataAN[0].naturalAreas)
 
                 let arraynaturalareas = dataAN[0].naturalAreas;
-                console.log(arraynaturalareas);
+                //console.log(arraynaturalareas);
 
-                // extraer las name del array arraynaturalareas
+                // extraer name y description del array arraynaturalareas
+                let arrayNaturalAreas2 = data.map((naturalArea) => {
+                    return {
+                        name: naturalArea.name,
+                        description: naturalArea.description,
+                        caption: "Cuidad",
+                    };
+                });
+                console.log(arrayNaturalAreas2);
+
                 let arraynamesNaturalareas = arraynaturalareas.map((naturalArea) => naturalArea.name);
-                console.log(arraynamesNaturalareas);
+                //console.log(arraynamesNaturalareas);
 
                 // eliminar duplicados del array
                 const uniqueElements = [...new Set(arraynamesNaturalareas)];
                 console.log(uniqueElements);
 
+                let arrayNaturalAreas3 = uniqueElements.map((naturalArea) => {
+                    return {
+                        name: naturalArea,
+                        description: "",
+                        caption: "Área Natural",
+                    };
+                });
+                console.log(arrayNaturalAreas3);
+
+                arrayfINAL = arrayNaturalAreas2.concat(arrayNaturalAreas3);
+                console.log(arrayfINAL);
 
                 let cuidades = document.getElementById("cuidades");
                 cuidades.innerHTML += `<h2>${data.length} Ciudades y ${uniqueElements.length} Áreas Naturales:</h2>`;
 
                 let contenedor = document.getElementById("contenedor");
-                for (let i = 0; i < data.length; i++) {
+                for (let i = 0; i < arrayfINAL.length; i++) {
                     let tarjeta = document.createElement("div");
                     tarjeta.className = "tarjeta";
                     tarjeta.innerHTML = `   <div class="card row" >
                                     <img src="https://img.freepik.com/vector-premium/icono-vector-silueta-montana-picos-rocosos-cordilleras-icono-montana-blanco-negro_574545-202.jpg" class="card-img-top-details p-2" alt=""/>
                                     <div class="card-body justify-content-center align-items-center">
-                                        <p  class="ciudad">Ciudad</p>
-                                        <h5 class="card-title">${data[i].name}</h5>
-                                        <p class="card-text">${data[i].description}</p>
+                                        <p  class="${arrayfINAL[i].caption==='Cuidad' ? 'ciudad' : 'area-natural'}">${arrayfINAL[i].caption}</p>
+                                        <h5 class="card-title">${arrayfINAL[i].name}</h5>
+                                        <p class="card-text">${arrayfINAL[i].description}</p>
                                     </div>
                                 </div>`;
 
                     contenedor.appendChild(tarjeta);
                 }
 
-                let contenedor2 = document.getElementById("contenedor");
-                for (let i = 0; i < uniqueElements.length; i++) {
-                    let tarjeta = document.createElement("div");
-                    tarjeta.className = "tarjeta";
-                    tarjeta.innerHTML = `   <div class="card row" >
-                                    <img src="https://img.freepik.com/vector-premium/icono-vector-silueta-montana-picos-rocosos-cordilleras-icono-montana-blanco-negro_574545-202.jpg" class="card-img-top-details p-2" alt=""/>
-                                    <div class="card-body justify-content-center align-items-center">
-                                        <p class="area-natural">Área Natural</p>    
-                                        <h5 class="card-title">${uniqueElements[i]}</h5>
-                                    </div>
-                                </div>`;
-
-                    contenedor2.appendChild(tarjeta);
-                }
             });
     });
 
-/*
-fetch(urlNaturalareas).then(response => response.json()).then(data => {
-    console.log(data)
 
-    
-
-})
-
-*/

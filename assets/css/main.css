@@ -64,7 +64,7 @@ main {
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 }
-.card-img-top{
+.card-img-top {
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -76,18 +76,82 @@ main {
     -webkit-filter: blur(5%);
     filter: blur(5%);
 }
-.area-natural{
+h4{
+    padding-left: 10px;
+}
+.card-text {
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+.card-text::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.card-text::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.card-text::-webkit-scrollbar-button:increment,.card-text::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.card-text::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.card-text::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+table{
+    border-color: black !important;
+}
+
+.size{
+    width: 150px;
+  overflow: auto;
+}
+
+.area-natural {
     background-color: green;
     color: white;
     text-align: center;
     border-radius: 5px;
 }
-.ciudad{
+.ciudad {
     background-color: blue;
     color: white;
     text-align: center;
     border-radius: 5px;
 }
+
+.img-div {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+.azul {
+    background-color: rgb(183, 232, 255);
+}
+.verde {
+    background-color: rgb(206, 253, 186);
+}
+.blanco {
+    background-color: white;
+}
+.table > :not(caption) > * > * {
+    background-color: transparent !important;
+}
+
+
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
     /* min-height: 5vh; */
