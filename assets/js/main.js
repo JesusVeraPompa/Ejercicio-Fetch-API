@@ -9,7 +9,7 @@ fetch(urlFinal).then(response => response.json()).then(data => {
         let tarjeta = document.createElement("div");
         tarjeta.className = "tarjeta";
         tarjeta.innerHTML = `   <div class="card row" >
-                                <img src="assets/img/departamentos/${data[i].name}.png" class="card-img-top p-2" alt=""/>
+                                <img src="/assets/img/departamentos/${data[i].name}.png" class="card-img-top p-2" alt=""/>
                                 <div class="card-body justify-content-center align-items-center">
                                     <h5 class="card-title">${data[i].name}</h5>
                                     <p class="card-text">${data[i].description}</p>
