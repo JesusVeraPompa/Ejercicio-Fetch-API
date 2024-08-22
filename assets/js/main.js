@@ -4,6 +4,9 @@ let urlFinal=url+"/api/v1/Department"
 fetch(urlFinal).then(response => response.json()).then(data => {
     console.log(data)
 
+    let departamentos = document.getElementById("departamentos");
+    departamentos.innerHTML += `<h2>${data.length} Departamentos:</h2>`
+
     let contenedor = document.getElementById("contenedor");
     for (let i = 0; i < data.length; i++) {
         let tarjeta = document.createElement("div");
