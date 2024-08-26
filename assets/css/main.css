@@ -30,10 +30,10 @@ main {
     background-color: rgb(240, 240, 240);
     padding-bottom: 50px;
 }
-main>.container-fluid>.row{
+main > .container-fluid > .rowww {
     padding-top: 50px !important;
 }
- 
+
 .cuadro > img {
     width: auto;
     height: 500px;
@@ -81,7 +81,7 @@ main>.container-fluid>.row{
     -webkit-filter: blur(5%);
     filter: blur(5%);
 }
-h4{
+h4 {
     padding-left: 10px;
 }
 .card-text {
@@ -95,12 +95,13 @@ h4{
 }
 
 .card-text::-webkit-scrollbar:vertical {
-    width:10px;
+    width: 10px;
 }
 
-.card-text::-webkit-scrollbar-button:increment,.card-text::-webkit-scrollbar-button {
+.card-text::-webkit-scrollbar-button:increment,
+.card-text::-webkit-scrollbar-button {
     display: none;
-} 
+}
 
 .card-text::-webkit-scrollbar:horizontal {
     height: 10px;
@@ -113,16 +114,16 @@ h4{
 }
 
 .card-text::-webkit-scrollbar-track {
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 
-table{
+table {
     border-color: black !important;
 }
 
-.size{
+.size {
     width: 150px;
-  overflow: auto;
+    overflow: auto;
 }
 
 .area-natural {
@@ -156,6 +157,9 @@ table{
     background-color: transparent !important;
 }
 
+.barra-buscar{
+    background-color: #cecece;
+}
 
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {

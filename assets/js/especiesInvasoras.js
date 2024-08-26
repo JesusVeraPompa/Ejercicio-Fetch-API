@@ -12,9 +12,9 @@ fetch(urlFinal)
 
             if (data[i].riskLevel === 2) {
                 tarjeta.className = "verde";
-            }else if (data[i].riskLevel === 1) {
+            } else if (data[i].riskLevel === 1) {
                 tarjeta.className = "azul";
-            }else{
+            } else {
                 tarjeta.className = "blanco";
             }
             tarjeta.innerHTML = `
@@ -34,5 +34,4 @@ fetch(urlFinal)
         }
     });
 
-
-"${data[i].riskLevel===2 ? 'verde' : 'area-natural'}"
+("${data[i].riskLevel===2 ? 'verde' : 'area-natural'}");
