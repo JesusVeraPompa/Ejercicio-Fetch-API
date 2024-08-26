@@ -18,7 +18,7 @@ fetch(urlFinal)
         console.log(data);
 
         let departamentos = document.getElementById("departamentos");
-        departamentos.innerHTML += `<h2>${data.length} Departamentos:</h2>`;
+        departamentos.innerHTML += `<h2>Colombia tiene <strong>${data.length}</strong> Departamentos:</h2>`;
 
         viewDomIndex(contenedor, data);
 
@@ -34,7 +34,6 @@ fetch(urlFinal)
             } else {
                 if (arregloFiltroLetra.length === 0) {
                     LimpiarTarjetas();
-                    /*CargarTarjetas();*/
                     let tarjeta = document.createElement("div");
                     tarjeta.innerHTML = `   
                                         <div >

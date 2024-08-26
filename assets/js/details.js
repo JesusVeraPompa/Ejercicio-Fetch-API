@@ -17,11 +17,13 @@ let url = "https://api-colombia.com/";
 let urlFinal = url + "api/v1/Department/" + id;
 let urlCities = urlFinal + "/cities";
 let urlNaturalareas = urlFinal + "/naturalareas";
+let depa="";
 
 fetch(urlFinal)
   .then((response) => response.json())
   .then((data) => {
     //console.log(data);
+    depa=data.name
 
     let name = document.getElementById("name");
     name.innerHTML += `<h1>${data.name} - Departamento de <span class="yellow">Col</span><span class="blue">om</span><span class="red">bia</span></h1>`;
@@ -89,7 +91,7 @@ fetch(urlCities)
         console.log(arrayfINAL);
 
         let cuidades = document.getElementById("cuidades");
-        cuidades.innerHTML += `<h2>${data.length} Ciudades y ${uniqueElements.length} Áreas Naturales:</h2>`;
+        cuidades.innerHTML += `<h2>${depa} tiene <strong>${data.length}</strong> Ciudades y <strong>${uniqueElements.length}</strong> Áreas Naturales:</h2>`;
 
         viewDomDetails(contenedor, arrayfINAL);
 
