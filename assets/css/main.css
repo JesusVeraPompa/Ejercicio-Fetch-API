@@ -161,6 +161,12 @@ table {
     background-color: #cecece;
 }
 
+#category {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
     /* min-height: 5vh; */
