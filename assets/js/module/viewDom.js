@@ -9,7 +9,7 @@ export let viewDomIndex = (idHtmlConteiner, data) => {
                                         <p class="card-text">${data[i].description}</p>
                                         <div class="row justify-content-center align-items-center">
                                             <div class="col">
-                                                <a id="boton${data[i].id}" href="./pages/details.html?id=${data[i].id}" class="btn btn-primary" onClick="valorDelID('${data[i].id}')">Details</a>
+                                                <a id="boton${data[i].id}" href="./pages/details.html?id=${data[i].id}" class="btn btn-primary" onClick="valorDelID('${data[i].id}')">Detalles</a>
                                             </div>
                                         </div>
                                     </div>
